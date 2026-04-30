@@ -1,5 +1,4 @@
-# NYRA Personal Safety Application 🚨
-
+# NYRA - Intelligent Personal Safety Ecosystem 🚨
 
 [![React Native](https://img.shields.io/badge/React%20Native-0.72+-blue.svg)](https://reactnative.dev/)
 [![Expo](https://img.shields.io/badge/Expo-SDK%2049+-black.svg)](https://expo.dev/)
@@ -8,159 +7,58 @@
 
 ## 📱 Overview
 
-NYRA (Need Your Rapid Assistance) is an intelligent personal safety application that leverages Human Activity Recognition (HAR) algorithms and real-time sensor data to detect emergency situations and automatically alert emergency contacts. Built with React Native for cross-platform compatibility.
+**NYRA (Need Your Rapid Assistance)** is an advanced, all-in-one personal safety ecosystem designed to protect users through state-of-the-art AI, continuous real-time monitoring, and highly reliable community networks. Built on React Native for seamless cross-platform operation, NYRA proactively anticipates danger, automates emergency responses, and mobilizes swift assistance.
 
-## ✨ Key Features
+## ✨ Core Features
 
-- **🔐 Dual Protection Alert System**: Emergency calls + automatic SMS backup for maximum reliability
-  - Automated emergency calls with pre-recorded voice messages
-  - Automatic SMS sent when call ends (no user interaction needed)
-  - Fail-safe fallback: SMS sent immediately if calls fail
-  - [Learn more about Dual Protection →](DUAL_PROTECTION_SYSTEM.md)
-- **🤖 AI-Powered Emergency Detection**: Advanced HAR algorithms analyze accelerometer and gyroscope data
-- **📍 Real-time Location Tracking**: GPS integration for precise emergency location sharing
-- **🚨 Automated Alert System**: Instant SMS and email notifications to emergency contacts
-- **👥 Emergency Contact Management**: Easy contact setup and management interface
-- **⚙️ Customizable Settings**: Adjustable sensitivity levels and notification preferences
-- **📱 Cross-Platform Support**: Available for both Android and iOS devices
+### 🤖 AI-Powered Emergency Detection (TFLite)
+- **Human Activity Recognition (HAR)**: On-device ML models constantly analyze accelerometer and gyroscope data to recognize distress physically.
+- **Fall & Impact Detection**: Automatically detects sudden falls, physical impacts, or anomalous struggles.
+- **Zero-Latency Processing**: Purely on-device inference ensures instantaneous detection without requiring an internet connection.
 
-## 🚀 Download APK
+### 🔐 Dual Protection Alert System
+- **Automated Emergency Calls & SMS**: In critical situations, NYRA triggers an automated voice call to emergency contacts, instantly followed by an automated SMS carrying precise GPS coordinates.
+- **Fail-Safe Fallback**: If a call fails to connect, the system falls back to SMS immediately, ensuring the SOS message always gets through.
+- **Panic Button**: Discrete hardware-bound or on-screen one-touch SOS activation.
 
-### Latest Stable Release
-📥 **[Download NYRA Safety App v1.0](https://github.com/your-username/nyra-safety-app/releases/download/v1.0.0/NYRA-Safety-App-stable.apk)**
+### 👥 Community & Geofencing Intelligence
+- **Community Map & Incident Sharing**: See nearby communities, live incident reports, and real-time alerts submitted by other users.
+- **Danger Zones**: Automated geofencing maps out known high-risk areas and pre-alerts users when they enter these zones.
+- **Walk With Me**: Live journey tracking that lets trusted contacts digitally escort you home, ensuring you never walk alone.
 
-*Compatible with Android 6.0+ (API level 23)*
+### ⚕️ Comprehensive Medical Profile
+- **Emergency Medical Info**: Dedicated hub to store blood group, allergies, emergency conditions, and medications, vital for first responders when every second counts.
+- **Smart Safety Modes**: Context-aware settings (e.g., Idle, Walking, Running, Shield Up) automatically tuning the sensitivity of detection sensors based on the user's current environment.
 
-## 🛠️ Technology Stack
+## 🚀 Quick Setup & Installation
 
-| Component | Technology |
-|-----------|------------|
-| **Frontend** | React Native 0.72+ |
-| **Development Platform** | Expo SDK 49+ |
-| **Navigation** | React Navigation 6 |
-| **State Management** | React Hooks & Context API |
-| **Sensors** | Expo Sensors (Accelerometer, Gyroscope) |
-| **Location Services** | Expo Location |
-| **Notifications** | Expo Notifications |
-| **Storage** | AsyncStorage |
-| **Communication** | SMS & Email APIs |
-
-## 📋 Prerequisites
-
-Before running the application, ensure you have:
-
-- Node.js 16+ installed
-- npm or yarn package manager
+### Prerequisites
+- Node.js 18+ and `npm`/`yarn`
 - Expo CLI (`npm install -g @expo/cli`)
-- Android Studio (for Android development)
-- Xcode (for iOS development, macOS only)
+- React Native environment (Android Studio / Xcode)
 
-## 🔧 Installation & Setup
-
-### 1. Clone the Repository
+### Installation
 ```bash
 git clone https://github.com/your-username/nyra-safety-app.git
 cd nyra-safety-app
-```
-
-### 2. Install Dependencies
-```bash
-cd NYRA-app
 npm install
-# or
-yarn install
 ```
 
-### 3. Start the Development Server
+### Start Development Server
 ```bash
 npx expo start
 ```
+*Run on physical device using Expo Go by scanning the QR code, or press `a`/`i` for Android/iOS simulators.*
 
-### 4. Run on Device/Simulator
-- **Android**: Press `a` in terminal or scan QR code with Expo Go app
-- **iOS**: Press `i` in terminal or scan QR code with Expo Go app
+## 🔒 Privacy First
 
-## 📁 Project Structure
-
-```
-NYRA-app/
-├── App.js                 # Main application component
-├── index.js              # Entry point
-├── package.json          # Dependencies and scripts
-├── app.json              # Expo configuration
-├── assets/               # Static assets
-│   ├── icons/           # Application icons
-│   ├── images/          # Images and graphics
-│   └── sounds/          # Audio files
-├── components/           # Reusable UI components
-│   ├── EmergencyContactCard.js
-│   ├── ErrorState.js
-│   ├── PanicButton.js
-│   └── ProtectionStatusCard.js
-├── hooks/               # Custom React hooks
-│   ├── useContacts.js
-│   └── useSettings.js
-├── navigation/          # Navigation configuration
-│   └── AppNavigator.js
-├── screens/            # Application screens
-│   ├── ActivityDetectionScreen.js
-│   ├── AlertScreen.js
-│   ├── ContactsScreen.js
-│   ├── HomeScreen.js
-│   └── SettingsScreen.js
-├── services/           # Business logic and APIs
-│   ├── alertService.js
-│   ├── emailService.js
-│   ├── harModelService.js
-│   ├── locationService.js
-│   ├── sensorService.js
-│   ├── smsService.js
-│   └── storageService.js
-└── utils/             # Utility functions
-    └── theme.js
-```
-
-## 🔬 HAR Algorithm Implementation
-
-The application uses a sophisticated Human Activity Recognition model that:
-
-1. **Collects sensor data** from accelerometer and gyroscope at 50Hz
-2. **Preprocesses data** using sliding window technique (3-second windows)
-3. **Extracts features** including statistical measures and frequency domain analysis
-4. **Classifies activities** using machine learning algorithms trained on the [UCI HAR Dataset](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones)
-5. **Detects anomalies** that may indicate emergency situations (falls, sudden impacts)
-
-## 📊 Performance Metrics
-
-- **Detection Accuracy**: 94.2% for fall detection
-- **False Positive Rate**: <5%
-- **Response Time**: <2 seconds from event to alert
-- **Battery Optimization**: Background processing with minimal battery impact
-
-## 🔒 Privacy & Security
-
-- **Local Processing**: All sensor data is processed locally on the device
-- **No Cloud Storage**: Personal data is not transmitted to external servers
-- **Encrypted Storage**: Emergency contacts stored with device encryption
-- **Permission-based Access**: Only necessary permissions requested
+- **Local Inference**: ML computation happens exclusively on your device.
+- **End-to-End Encryption**: Personal contacts, medical data, and real-time tracking are tightly encrypted.
+- **No Unwanted Tracking**: Geographic data is primarily kept localized or within strict, user-approved community circles.
 
 ## 🤝 Contributing
 
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-## 🙏 Acknowledgments
-
-- UCI Machine Learning Repository for the HAR Dataset
-- React Native and Expo communities
-- Emergency services and safety organizations for guidance
+We welcome contributions to strengthen safety globally! Please branch, commit your incredible features, and open a Pull Request.
 
 ---
-
-**Made with ❤️ for personal safety and peace of mind**
+**Made with ❤️ for proactive tracking, community unity, and peace of mind.**
