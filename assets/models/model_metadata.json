@@ -1,0 +1,27 @@
+{
+  "model_name": "Activity Recognition LSTM",
+  "version": "1.0",
+  "input_shape": [
+    1,
+    100,
+    4
+  ],
+  "input_features": [
+    "acc_x",
+    "acc_y",
+    "acc_z",
+    "svm"
+  ],
+  "output_classes": [
+    "Walking",
+    "Jogging",
+    "Upstairs",
+    "Downstairs",
+    "Sitting",
+    "Standing"
+  ],
+  "window_size": 100,
+  "sampling_rate": 10,
+  "expected_accuracy": 0.95,
+  "inference_time_ms": 10
+}
