@@ -121,3 +121,27 @@ jspm_packages/
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+#additional readme files
+BACKEND_SETUP_GUIDE.md
+BUILD_DEV_BUILD.md
+CALL_SMS_FLOW.md
+COMMUNITY_FEATURES.md
+COMMUNITY_IMPROVEMENTS.md
+COMMUNITY_MAP_FEATURE.md
+DUAL_PROTECTION_SYSTEM.md
+FIREBASE_SETUP.md
+FIX_AUTH_ERROR.md
+HOW_TO_TEST_ML.md
+INTEGRATION_COMPLETE.md
+ML_FIX_SUMMARY.md
+ML_MODEL_GUIDE.md
+ML_STATUS.md
+TEST_ML_MODEL.js
+TFLITE_INTEGRATION.md
+TFLITE_NOT_WORKING_ANALYSIS.md
+
+#logs
+build-log.txt
+build-error.txt
+full-error.txt
