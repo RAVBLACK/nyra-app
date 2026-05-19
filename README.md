@@ -61,4 +61,4 @@ npx expo start
 We welcome contributions to strengthen safety globally! Please branch, commit your incredible features, and open a Pull Request.
 
 ---
-**Made with ❤️ for proactive tracking, community unity, and peace of mind.**
+**Made with ❤️ by Supriya & Rakesh**
